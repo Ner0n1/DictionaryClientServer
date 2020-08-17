@@ -13,7 +13,6 @@ namespace DictionaryClient
             Console.Write("Введите свое имя:");
             string userName = Console.ReadLine();
             TcpClient client = null;
-            //IPHostEntry host = Dns.GetHostEntry(args[0]);
             int port = int.Parse(args[1]);
 
             try

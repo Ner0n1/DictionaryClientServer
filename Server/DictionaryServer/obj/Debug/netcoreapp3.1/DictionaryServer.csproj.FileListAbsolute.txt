@@ -1,0 +1,13 @@
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\bin\Debug\netcoreapp3.1\DictionaryServer.exe
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\bin\Debug\netcoreapp3.1\DictionaryServer.deps.json
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\bin\Debug\netcoreapp3.1\DictionaryServer.runtimeconfig.json
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\bin\Debug\netcoreapp3.1\DictionaryServer.runtimeconfig.dev.json
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\bin\Debug\netcoreapp3.1\DictionaryServer.dll
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\bin\Debug\netcoreapp3.1\DictionaryServer.pdb
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.csprojAssemblyReference.cache
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.AssemblyInfoInputs.cache
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.AssemblyInfo.cs
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.dll
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.pdb
+C:\Users\A\source\repos\DictionaryClientServer\Server\DictionaryServer\obj\Debug\netcoreapp3.1\DictionaryServer.genruntimeconfig.cache
