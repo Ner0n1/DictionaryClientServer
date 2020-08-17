@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DictionaryServer": {
+      "commandName": "Project",
+      "commandLineArgs": "Server=(localdb)\\mssqllocaldb;Database=Dictionary;Trusted_Connection=True; 8888"
+    }
+  }
+}
