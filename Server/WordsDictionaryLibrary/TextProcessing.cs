@@ -12,26 +12,14 @@ namespace TextHandling
         
         private const int minLength = 3, maxLength = 15;
         private string[] ReadText(string path)
-        {
-            try
-            {
-                //Создадим объект класса для считывания файла
-                using StreamReader sr = new StreamReader(path, System.Text.Encoding.UTF8, false);
-                //Считаем файл и разобъем его на слова
-                string line = sr.ReadToEnd().ToLower();
-                var word = line.Split(' ', '.', ',', ':', ';', '-','(',')','\n','\r');               
-                return word;
-            }
-            catch (Exception e)
-            {
-                // Выведем ошибку если произойдет.
-                Console.WriteLine("Невозможно прочитать файл:");
-                Console.WriteLine(e.Message);
-                Environment.Exit(0);
-                string[] exWord = new string[1];                
-                return exWord;
-            }
-
+        {          
+            //Создадим объект класса для считывания файла
+            using StreamReader sr = new StreamReader(path, System.Text.Encoding.UTF8, false);
+            //Считаем файл и разобъем его на слова
+            string line = sr.ReadToEnd().ToLower();
+            var word = line.Split(' ', '.', ',', ':', ';', '-','(',')','\n','\r');               
+            return word;
+            
         }
 
         private Dictionary<string,int> GroupToDictionary(string[] words)

@@ -10,8 +10,7 @@ using System.IO;
 
 namespace DictionaryLibrary
 {
-    public class DBDictionary<T> : IStorage
-        where T : IDictionary
+    public class DBDictionary<T> where T : IDictionary
     {
         private Dictionary<string, int> _updateDictionary;
 

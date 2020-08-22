@@ -11,12 +11,13 @@ using TextHandling;
 
 namespace ConnectionProcessing
 {
-    public class ClientObject<T> where T:IStorage
+    public class ClientObject
     {
         public TcpClient client;
 
-        public T DBIO;
-        public ClientObject(TcpClient tcpClient, T db)
+        public DBDictionary<TextProcessing> DBIO;
+        
+        public ClientObject(TcpClient tcpClient, DBDictionary<TextProcessing> db)
         {
             client = tcpClient;
             DBIO = db;
@@ -24,7 +25,7 @@ namespace ConnectionProcessing
 
        
         public void Autocomplete()
-        {
+        {           
             NetworkStream stream = null;
             try
             {
@@ -42,8 +43,7 @@ namespace ConnectionProcessing
                     }
                     while (stream.DataAvailable);
 
-                    string message = builder.ToString();
-
+                    string message = builder.ToString();                    
                     Console.WriteLine(message);
                     message = message.ToLower();
                     string[] splitMessage = message.Split(' ');
@@ -69,7 +69,7 @@ namespace ConnectionProcessing
                     stream.Close();
                 if (client != null)
                     client.Close();
-            }
+            }            
         }
     }
 }

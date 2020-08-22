@@ -7,6 +7,7 @@ using DictionaryLibrary;
 using TextHandling;
 using EFUserContext;
 using System.Configuration;
+using System.IO;
 
 namespace DictionaryServer
 {
@@ -22,8 +23,7 @@ namespace DictionaryServer
                 Console.WriteLine("Введите управляющую комаду:");
                 string info = Console.ReadLine();
                 string[] command = info.Split(' ');
-                var a = ConfigurationManager.AppSettings["CreateDictionary"];
-
+                
                 try
                 {
                     if (command[0] == ConfigurationManager.AppSettings["CreateDictionary"])
@@ -41,9 +41,14 @@ namespace DictionaryServer
                         Console.WriteLine("Обновление завершено.");
                     }
                 }
-                catch (Exception ex)
+                catch (IndexOutOfRangeException)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("Отсутствует путь к файлу. Невозможно обновить базу данных.");
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine("Невозможно прочитать файл:");
+                    Console.WriteLine(e.Message);
                 }
 
                 if (command[0] == ConfigurationManager.AppSettings["DeleteDictionary"])
@@ -67,10 +72,10 @@ namespace DictionaryServer
                 while (true)
                 {
                     TcpClient client = listener.AcceptTcpClient();
-                    ClientObject<DBDictionary<TextProcessing>> clientObject = new ClientObject<DBDictionary<TextProcessing>>(client, DBIO);
+                    ClientObject clientObject = new ClientObject(client, DBIO);
                     //Создание потока для нового клиента
                     Thread clientThread = new Thread(new ThreadStart(clientObject.Autocomplete));
-                    clientThread.Start();
+                    clientThread.Start();                    
                 }
             }
             catch (Exception ex)
