@@ -5,7 +5,7 @@ using System.Threading;
 using ConnectionProcessing;
 using DictionaryLibrary;
 using TextHandling;
-using EFUserContext;
+using TSPUsage;
 using System.Configuration;
 using System.IO;
 
@@ -65,12 +65,12 @@ namespace DictionaryServer
 
             try
             {
-                listener = new TcpListener(IPAddress.Parse("127.0.0.1"), int.Parse(args[1]));
-                listener.Start();
+                TSPServer serv = new TSPServer();
+                listener=serv.StartListener(args[1]);               
                 Console.WriteLine("Ожидание подключений...");
 
                 while (true)
-                {
+                {                    
                     TcpClient client = listener.AcceptTcpClient();
                     ClientObject clientObject = new ClientObject(client, DBIO);
                     //Создание потока для нового клиента
